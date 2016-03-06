@@ -924,3 +924,16 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+
+/*
+SHOESTRAP STYLES
+*/
+#masthead.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#masthead.container-fluid #site-navigation {
+  border-radius: 0;
+}
