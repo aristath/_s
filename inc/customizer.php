@@ -42,6 +42,16 @@ if ( class_exists( 'Kirki' ) ) {
 		'type'  => 'expanded',
 	) );
 
+	Kirki::add_panel( 'shoestrap_typography', array(
+		'title' => esc_attr__( 'Typography', 'kirki-demo' ),
+	) );
+
+	Kirki::add_section( 'shoestrap_typography_body', array(
+		'title' => esc_attr__( 'Body Typography', 'kirki-demo' ),
+		'panel' => 'shoestrap_typography',
+		'type'  => 'expanded',
+	) );
+
 	Kirki::add_field( 'shoestrap', array(
 		'type'        => 'color-alpha',
 		'settings'    => 'navbar_bg_color',
@@ -63,6 +73,35 @@ if ( class_exists( 'Kirki' ) ) {
 				'element'           => '#site-navigation .active',
 				'property'          => 'background-color',
 				'sanitize_callback' => 'shoestrap_darken_5',
+			),
+		),
+	) );
+
+	Kirki::add_field( 'shoestrap', array(
+		'type'        => 'typography',
+		'settings'    => 'body_typography',
+		'label'       => esc_attr__( 'Typography', 'kirki' ),
+		'description' => esc_attr__( 'Controls the main typography of your site. Please note that this control affects all typography elemenents on your site.', 'kirki' ),
+		'section'     => 'shoestrap_typography_body',
+		'default'     => array(
+			'font-family'    => 'Roboto',
+			'font-size'      => '1em',
+			'variant'        => '300',
+			'line-height'    => '1.5',
+			'letter-spacing' => '0',
+			'color'          => '#333333',
+		),
+		'priority'    => 10,
+		'choices'     => array(
+			'font-family'    => true,
+			'font-size'      => true,
+			'font-weight'    => true,
+			'line-height'    => true,
+			'color'          => false,
+		),
+		'output' => array(
+			array(
+				'element' => 'body',
 			),
 		),
 	) );
