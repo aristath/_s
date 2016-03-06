@@ -54,6 +54,16 @@ if ( class_exists( 'Kirki' ) ) {
 				'element'  => '#site-navigation',
 				'property' => 'background-color',
 			),
+			array(
+				'element'           => '#site-navigation a',
+				'property'          => 'color',
+				'sanitize_callback' => 'shoestrap_get_readable_color',
+			),
+			array(
+				'element'           => '#site-navigation .active',
+				'property'          => 'background-color',
+				'sanitize_callback' => 'shoestrap_darken_5',
+			),
 		),
 	) );
 

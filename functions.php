@@ -165,3 +165,8 @@ require get_template_directory() . '/inc/class-shoestrap-layout.php';
  * Load Shoestrap_Navwalker class
  */
 require get_template_directory() . '/inc/class-shoestrap-navwalker.php';
+
+/**
+ * Load Shoestrap Color functions
+ */
+require get_template_directory() . '/inc/color.php';
