@@ -160,3 +160,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Shoestrap_Layout class
  */
 require get_template_directory() . '/inc/class-shoestrap-layout.php';
+
+/**
+ * Load Shoestrap_Navwalker class
+ */
+require get_template_directory() . '/inc/class-shoestrap-navwalker.php';

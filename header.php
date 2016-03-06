@@ -43,7 +43,19 @@
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			<?php wp_nav_menu( array(
+				'menu'              => 'primary',
+				'theme_location'    => 'primary',
+				'menu_id'           => 'primary-menu',
+				'depth'             => 2,
+				'container'         => 'div',
+				'container_class'   => 'navbar',
+				'container_id'      => '',
+				'menu_class'        => 'nav navbar-nav',
+				'fallback_cb'       => 'Shoestrap_Navwalker::fallback',
+				'walker'            => new Shoestrap_Navwalker())
+			);
+			// wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
