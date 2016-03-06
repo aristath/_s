@@ -114,6 +114,11 @@ add_action( 'widgets_init', '_s_widgets_init' );
  * Enqueue scripts and styles.
  */
 function _s_scripts() {
+	wp_enqueue_style( 'bootstrap4-dev', get_template_directory_uri() . '/assets/vendor/bootstrap/dist/css/bootstrap.css' );
+	wp_enqueue_style( 'tether', get_template_directory_uri() . '/assets/vendor/tether/dist/css/tether.css' );
+
+	wp_enqueue_script( 'tether', get_template_directory_uri() . '/assets/vendor/tether/dist/js/tether.js', array( 'jquery' ) );
+	wp_enqueue_script( 'bootstrap4-dev', get_template_directory_uri() . '/assets/vendor/bootstrap/dist/js/bootstrap.js', array( 'jquery', 'tether' ) );
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
