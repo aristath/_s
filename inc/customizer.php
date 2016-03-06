@@ -33,21 +33,21 @@ if ( class_exists( 'Kirki' ) ) {
 	) );
 
 	Kirki::add_panel( 'shoestrap_header', array(
-		'title' => esc_attr__( 'Header', 'kirki-demo' ),
+		'title' => esc_attr__( 'Header', 'shoestrap' ),
 	) );
 
 	Kirki::add_section( 'shoestrap_navigation', array(
-		'title' => esc_attr__( 'Navigation', 'kirki-demo' ),
+		'title' => esc_attr__( 'Navigation', 'shoestrap' ),
 		'panel' => 'shoestrap_header',
 		'type'  => 'expanded',
 	) );
 
 	Kirki::add_panel( 'shoestrap_typography', array(
-		'title' => esc_attr__( 'Typography', 'kirki-demo' ),
+		'title' => esc_attr__( 'Typography', 'shoestrap' ),
 	) );
 
 	Kirki::add_section( 'shoestrap_typography_body', array(
-		'title' => esc_attr__( 'Body Typography', 'kirki-demo' ),
+		'title' => esc_attr__( 'Body Typography', 'shoestrap' ),
 		'panel' => 'shoestrap_typography',
 		'type'  => 'expanded',
 	) );
@@ -55,7 +55,7 @@ if ( class_exists( 'Kirki' ) ) {
 	Kirki::add_field( 'shoestrap', array(
 		'type'        => 'color-alpha',
 		'settings'    => 'navbar_bg_color',
-		'label'       => esc_attr__( 'Navbar Background Color', 'kirki' ),
+		'label'       => esc_attr__( 'Navbar Background Color', 'shoestrap' ),
 		'section'     => 'shoestrap_navigation',
 		'default'     => '#333333',
 		'priority'    => 10,
@@ -80,8 +80,8 @@ if ( class_exists( 'Kirki' ) ) {
 	Kirki::add_field( 'shoestrap', array(
 		'type'        => 'typography',
 		'settings'    => 'body_typography',
-		'label'       => esc_attr__( 'Typography', 'kirki' ),
-		'description' => esc_attr__( 'Controls the main typography of your site. Please note that this control affects all typography elemenents on your site.', 'kirki' ),
+		'label'       => esc_attr__( 'Typography', 'shoestrap' ),
+		'description' => esc_attr__( 'Controls the main typography of your site. Please note that this control affects all typography elemenents on your site.', 'shoestrap' ),
 		'section'     => 'shoestrap_typography_body',
 		'default'     => array(
 			'font-family'    => 'Roboto',
