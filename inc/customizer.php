@@ -52,6 +52,22 @@ if ( class_exists( 'Kirki' ) ) {
 		'type'  => 'expanded',
 	) );
 
+	Kirki::add_panel( 'shoestrap_layout', array(
+		'title' => esc_attr__( 'Layout', 'shoestrap' ),
+	) );
+
+	Kirki::add_section( 'shoestrap_layout_navbar', array(
+		'title' => esc_attr__( 'NavBar', 'shoestrap' ),
+		'panel' => 'shoestrap_layout',
+		'type'  => 'expanded',
+	) );
+
+	Kirki::add_section( 'shoestrap_layout_content', array(
+		'title' => esc_attr__( 'Content', 'shoestrap' ),
+		'panel' => 'shoestrap_layout',
+		'type'  => 'expanded',
+	) );
+
 	Kirki::add_field( 'shoestrap', array(
 		'type'        => 'color-alpha',
 		'settings'    => 'navbar_bg_color',
@@ -105,5 +121,34 @@ if ( class_exists( 'Kirki' ) ) {
 			),
 		),
 	) );
+
+	Kirki::add_field( 'shoestrap', array(
+		'type'        => 'radio-buttonset',
+		'settings'    => 'navbar_container',
+		'label'       => esc_attr__( 'Navbar Mode', 'shoestrap' ),
+		'description' => esc_attr__( 'Select if the navbar should be boxed or fluid.', 'shoestrap' ),
+		'section'     => 'shoestrap_layout_navbar',
+		'default'     => 'container-fluid',
+		'priority'    => 10,
+		'choices'     => array(
+			'container'       => esc_attr__( 'Boxed', 'shoestrap' ),
+			'container-fluid' => esc_attr__( 'Fluid', 'shoestrap' ),
+		),
+	) );
+
+	Kirki::add_field( 'shoestrap', array(
+		'type'        => 'radio-buttonset',
+		'settings'    => 'content_container',
+		'label'       => esc_attr__( 'Content Mode', 'shoestrap' ),
+		'description' => esc_attr__( 'Select if the content should be boxed or fluid.', 'shoestrap' ),
+		'section'     => 'shoestrap_layout_content',
+		'default'     => 'container',
+		'priority'    => 10,
+		'choices'     => array(
+			'container'       => esc_attr__( 'Boxed', 'shoestrap' ),
+			'container-fluid' => esc_attr__( 'Fluid', 'shoestrap' ),
+		),
+	) );
+
 
 }

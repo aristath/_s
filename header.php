@@ -24,7 +24,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'shoestrap' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="<?php echo apply_filters( 'shoestrap/layout/navbar/class', 'site-header' ); ?>" role="banner">
 		<nav id="site-navigation" class="navbar main-navigation" role="navigation">
 			<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 
@@ -44,4 +44,4 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<div id="content" class="<?php echo apply_filters( 'shoestrap/layout/content/class', 'site-content' ); ?>">
