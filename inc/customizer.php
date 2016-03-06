@@ -24,3 +24,11 @@ function _s_customize_preview_js() {
 	wp_enqueue_script( '_s_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', '_s_customize_preview_js' );
+
+if ( class_exists( 'Kirki' ) ) {
+
+	Kirki::add_config( 'shoestrap', array(
+		'option_type' => 'theme_mod',
+	) );
+
+}
