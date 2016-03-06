@@ -29,6 +29,32 @@ if ( class_exists( 'Kirki' ) ) {
 
 	Kirki::add_config( 'shoestrap', array(
 		'option_type' => 'theme_mod',
+		'capability'  => 'edit_theme_options',
+	) );
+
+	Kirki::add_panel( 'shoestrap_header', array(
+		'title' => esc_attr__( 'Header', 'kirki-demo' ),
+	) );
+
+	Kirki::add_section( 'shoestrap_navigation', array(
+		'title' => esc_attr__( 'Navigation', 'kirki-demo' ),
+		'panel' => 'shoestrap_header',
+		'type'  => 'expanded',
+	) );
+
+	Kirki::add_field( 'shoestrap', array(
+		'type'        => 'color-alpha',
+		'settings'    => 'navbar_bg_color',
+		'label'       => esc_attr__( 'Navbar Background Color', 'kirki' ),
+		'section'     => 'shoestrap_navigation',
+		'default'     => '#333333',
+		'priority'    => 10,
+		'output'      => array(
+			array(
+				'element'  => '#site-navigation',
+				'property' => 'background-color',
+			),
+		),
 	) );
 
 }
