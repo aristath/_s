@@ -36,7 +36,7 @@
 				'container'         => '',
 				// 'container_class'   => 'navbar',
 				'container_id'      => '',
-				'menu_class'        => 'nav navbar-nav',
+				'menu_class'        => 'nav nav-pills',
 				'fallback_cb'       => 'Shoestrap_Navwalker::fallback',
 				'walker'            => new Shoestrap_Navwalker())
 			);
